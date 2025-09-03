@@ -1,0 +1,8 @@
+/* Polymetric Trips placeholder stylesheet */
+/* Main styles are defined inline in index.html for portability */
+
+:root { color-scheme: dark; }
+
+html, body { height: 100%; margin: 0; }
+
+canvas { display: block; }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Polymetric Trips - Filter Envelope</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="libraries/p5.func.min.js"></script>
+
+    <style>
+      :root{
+        --bg:#0e0f12;
+        --panel:#16181d;
+        --ink:#e6edf3;
+        --muted:#9aa4b2;
+        --accent:#4cc2ff;
+        --grid:#1e222a;
+        --good:#7ee787;
+      }
+      html,body{
+        height:100%;
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;
+      }
+      main{
+        max-width:1100px;
+        margin:0 auto;
+        padding:16px;
+      }
+      canvas{
+        display:block;
+        margin:0 auto 16px auto;
+        border-radius:8px;
+        box-shadow:0 0 0 1px #000 inset, 0 8px 32px rgba(0,0,0,0.4);
+      }
+      .ui{
+        background:var(--panel);
+        border-radius:12px;
+        padding:12px 16px;
+        box-shadow:0 0 0 1px #0b0c10 inset;
+      }
+      .row{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        flex-wrap:wrap;
+        margin:8px 0;
+      }
+      .row label{
+        width:92px;
+        color:var(--muted);
+        font-size:12px;
+        text-transform:uppercase;
+        letter-spacing:.08em;
+      }
+      .value{
+        min-width:64px;
+        text-align:right;
+        color:var(--ink);
+        font-variant-numeric:tabular-nums;
+        font-size:12px;
+      }
+      .row input[type="range"]{
+        -webkit-appearance:none;
+        width:100%;
+        height:4px;
+        border-radius:999px;
+        background:linear-gradient(90deg,var(--accent),#7aa2ff);
+        outline:none;
+        flex:1 1 220px;
+        min-width:160px;
+        max-width:420px;
+      }
+      input[type="range"]::-webkit-slider-thumb{
+        -webkit-appearance:none;
+        width:16px;height:16px;border-radius:50%;
+        background:var(--ink); border:2px solid var(--panel);
+        box-shadow:0 1px 2px rgba(0,0,0,.5);
+        cursor:pointer;
+      }
+      button.gate{
+        background:linear-gradient(180deg,#2a313f,#1c212b);
+        color:var(--ink);
+        border:1px solid #0b0c10;
+        border-radius:8px;
+        padding:10px 14px;
+        font-weight:600;
+        cursor:pointer;
+      }
+      button.gate:active{ transform:translateY(1px); }
+      .hint{
+        color:var(--muted);
+        font-size:12px;
+        margin-top:6px;
+      }
+      @media (max-width: 640px){
+        .row{ gap:8px; }
+        .row label{ width:72px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div id="ui" class="ui"></div>
+      <div class="hint">Hold the button or press Z/Space. Envelope drives low‑pass cutoff; sliders update audio and visuals.</div>
+      <script src="sketch.js"></script>
+    </main>
+  </body>
+</html>
