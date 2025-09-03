@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "ic-alchemy",
+        "projectKey": "IC-Alchemy_Pico2Seq"
+    }
+}
